@@ -16,11 +16,14 @@ class MonteCarloInt: NSObject, ObservableObject {
     @Published var guessesString = ""
     @Published var eMinusXString = ""
     @Published var enableButton = true
+    @Published var errorString = ""
+    var actualEMinusX = 0.6321205588285577
     var e = Darwin.M_E
     var eMinusX = 0.0
     var guesses = 1
     var totalGuesses = 0
     var totalIntegral = 0.0
+    var error = 0.0
     var firstTimeThroughLoop = true
     
     @MainActor init(withData data: Bool){
@@ -59,9 +62,9 @@ class MonteCarloInt: NSObject, ObservableObject {
         ///Calculates the value of π from the area of a unit circle
         
         eMinusX = totalIntegral/Double(totalGuesses) * boundingBoxCalculator.calculateSurfaceArea(numberOfSides: 2, lengthOfSide1: 1.0, lengthOfSide2: 1.0, lengthOfSide3: 0.0)
-        
+        error = actualEMinusX - eMinusX
         await updateEMinusXString(text: "\(eMinusX)")
-        
+        await updateErrorString(text: "\(abs(error*100))")
      
        
         
@@ -77,7 +80,6 @@ class MonteCarloInt: NSObject, ObservableObject {
         var integral = 0.0
         var point = (xPoint: 0.0, yPoint: 0.0)
         var ePoint = 0.0
-        var actualEMinusX = 0.6321205588285577
         var newInsidePoints : [(xPoint: Double, yPoint: Double)] = []
         var newOutsidePoints : [(xPoint: Double, yPoint: Double)] = []
         
@@ -168,15 +170,19 @@ class MonteCarloInt: NSObject, ObservableObject {
         
     }
     
-    /// updatePiString
-    /// The function runs on the main thread so it can update the GUI
-    /// - Parameter text: contains the string containing the current value of Pi
+
+  
     @MainActor func updateEMinusXString(text:String){
         
         self.eMinusXString = text
         
     }
     
+    @MainActor func updateErrorString(text:String){
+        
+        self.errorString = text
+        
+    }
     
     /// setButton Enable
     /// Toggles the state of the Enable Button on the Main Thread

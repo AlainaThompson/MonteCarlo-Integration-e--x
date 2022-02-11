@@ -15,6 +15,7 @@ struct ContentView: View {
     @State var guessString = "23458"
     @State var totalGuessString = "0"
     @State var eMinusXString = "0.0"
+    @State var errorString = "0.0"
    
     // Setup the GUI to monitor the data from the Monte Carlo Integral Calculator
     @ObservedObject var monteCarlo = MonteCarloInt(withData: true)
@@ -51,6 +52,15 @@ struct ContentView: View {
                     TextField("", text: $eMinusXString)
                         .padding()
                 }
+                
+                VStack(alignment: .center) {
+                    Text("Percent Error")
+                        .font(.callout)
+                        .bold()
+                    TextField("", text: $errorString)
+                        .padding()
+                }
+                
                 
                 Button("Cycle Calculation", action: {Task.init{await self.calculateEMinusX()}})
                     .padding()
@@ -96,6 +106,8 @@ struct ContentView: View {
         totalGuessString = monteCarlo.totalGuessesString
         
         eMinusXString =  monteCarlo.eMinusXString
+        
+        errorString = monteCarlo.errorString
         
         monteCarlo.setButtonEnable(state: true)
         
