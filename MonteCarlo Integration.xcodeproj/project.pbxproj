@@ -17,6 +17,12 @@
 		0919758A27AD9930009B899E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919756027AD992D009B899E /* ContentView.swift */; };
 		0919758B27AD9930009B899E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0919756127AD9930009B899E /* Assets.xcassets */; };
 		0919758C27AD9930009B899E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0919756127AD9930009B899E /* Assets.xcassets */; };
+		0919759C27AD99DC009B899E /* MonteCarlo Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919759B27AD99DC009B899E /* MonteCarlo Int.swift */; };
+		0919759D27AD99DC009B899E /* MonteCarlo Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919759B27AD99DC009B899E /* MonteCarlo Int.swift */; };
+		0919759F27AD99EC009B899E /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919759E27AD99EC009B899E /* BoundingBox.swift */; };
+		091975A027AD99EC009B899E /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919759E27AD99EC009B899E /* BoundingBox.swift */; };
+		091975A227AD9DE3009B899E /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091975A127AD9DE3009B899E /* Drawing.swift */; };
+		091975A327AD9DE3009B899E /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091975A127AD9DE3009B899E /* Drawing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,9 @@
 		0919757F27AD9930009B899E /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0919758327AD9930009B899E /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		0919758527AD9930009B899E /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		0919759B27AD99DC009B899E /* MonteCarlo Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonteCarlo Int.swift"; sourceTree = "<group>"; };
+		0919759E27AD99EC009B899E /* BoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
+		091975A127AD9DE3009B899E /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +108,9 @@
 			children = (
 				0919755F27AD992D009B899E /* MonteCarlo_IntegrationApp.swift */,
 				0919756027AD992D009B899E /* ContentView.swift */,
+				091975A127AD9DE3009B899E /* Drawing.swift */,
+				0919759B27AD99DC009B899E /* MonteCarlo Int.swift */,
+				0919759E27AD99EC009B899E /* BoundingBox.swift */,
 				0919756127AD9930009B899E /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -300,7 +312,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0919758927AD9930009B899E /* ContentView.swift in Sources */,
+				0919759C27AD99DC009B899E /* MonteCarlo Int.swift in Sources */,
 				0919758727AD9930009B899E /* MonteCarlo_IntegrationApp.swift in Sources */,
+				0919759F27AD99EC009B899E /* BoundingBox.swift in Sources */,
+				091975A227AD9DE3009B899E /* Drawing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +324,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0919758A27AD9930009B899E /* ContentView.swift in Sources */,
+				0919759D27AD99DC009B899E /* MonteCarlo Int.swift in Sources */,
 				0919758827AD9930009B899E /* MonteCarlo_IntegrationApp.swift in Sources */,
+				091975A027AD99EC009B899E /* BoundingBox.swift in Sources */,
+				091975A327AD9DE3009B899E /* Drawing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
