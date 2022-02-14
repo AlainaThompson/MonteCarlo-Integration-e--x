@@ -17,6 +17,7 @@ class MonteCarloInt: NSObject, ObservableObject {
     @Published var eMinusXString = ""
     @Published var enableButton = true
     @Published var errorString = ""
+    // actualEMinusX is the exact solution to the integral from 0 to 1
     var actualEMinusX = 0.6321205588285577
     var e = Darwin.M_E
     var eMinusX = 0.0
@@ -88,7 +89,7 @@ class MonteCarloInt: NSObject, ObservableObject {
             
             /* Calculate 2 random values within the box */
             /* Determine the distance from that point to the origin */
-            /* If the distance is less than the unit radius count the point being within the Unit Circle */
+            /* If the distance is less than the function of e^-x count the point being within the integral */
             point.xPoint = Double.random(in: 0.0...1.0)
             point.yPoint = Double.random(in: 0.0...1.0)
             
@@ -103,7 +104,7 @@ class MonteCarloInt: NSObject, ObservableObject {
                 newInsidePoints.append(point)
                
             }
-            else { //if outside the circle do not add to the number of points in the radius
+            else { //if outside the integral do not add to the number of points in the function of e^-x
                 
                 
                 newOutsidePoints.append(point)
@@ -153,8 +154,8 @@ class MonteCarloInt: NSObject, ObservableObject {
     /// updateData
     /// The function runs on the main thread so it can update the GUI
     /// - Parameters:
-    ///   - insidePoints: points inside the circle of the given radius
-    ///   - outsidePoints: points outside the circle of the given radius
+    ///   - insidePoints: points inside the function of a given x value
+    ///   - outsidePoints: points outside the function of a given x value
     @MainActor func updateData(insidePoints: [(xPoint: Double, yPoint: Double)] , outsidePoints: [(xPoint: Double, yPoint: Double)]){
         
         insideData.append(contentsOf: insidePoints)
